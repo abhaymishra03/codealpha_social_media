@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f6f2"><title>Socially — your little corner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home"><span class="brand-mark">s.</span><span>socially</span></a>
+      <div class="side-label">YOUR SPACE</div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span>Home</button>
+        <button class="nav-item" data-view="discover"><span class="nav-icon">⌕</span>Discover</button>
+        <button class="nav-item" data-view="profile"><span class="nav-icon">◉</span>My profile</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="tiny-spark">✳</div><p>A little place for<br>the things that matter.</p><span>Made for sharing, simply.</span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><div class="mobile-brand"><span class="brand-mark">s.</span> socially</div><div id="page-title" class="page-title">Your feed</div><div class="top-actions"><span class="today-label">A GOOD DAY TO CONNECT</span><button id="account-button" class="account-button" aria-label="Account menu"><span id="top-avatar" class="avatar avatar-small">?</span><span id="top-name">Guest</span><span class="chevron">⌄</span></button></div></header>
+      <div id="toast" class="toast" role="status"></div>
+      <div class="content-grid">
+        <section class="feed-column">
+          <div id="auth-panel" class="welcome-card">
+            <div class="welcome-art"><span class="art-sun"></span><span class="art-leaf">✳</span></div>
+            <div class="welcome-copy"><span class="eyebrow">A SPACE TO BE YOU</span><h1>Good things grow<br>when we <em>share.</em></h1><p>Find your people. Share your little moments. Stay awhile.</p><div class="welcome-buttons"><button id="open-register" class="button button-dark">Create your account <span>↗</span></button><button id="open-login" class="button button-light">Log in</button></div></div>
+          </div>
+          <section id="composer" class="composer-card hidden"><div class="composer-heading"><span id="composer-avatar" class="avatar">?</span><div><strong>What’s on your mind?</strong><span>Your people are listening.</span></div><span class="composer-spark">✳</span></div><textarea id="post-text" maxlength="1000" placeholder="Share a thought, a moment, a little joy…"></textarea><div class="composer-footer"><input id="post-image" type="url" placeholder="Optional image URL"><button id="share-post" class="button button-dark">Share post <span>↗</span></button></div></section>
+          <div class="feed-heading"><div><span class="eyebrow">YOUR COMMUNITY</span><h2 id="feed-title">Fresh from your feed</h2></div><div class="feed-filter">Latest <span>⌄</span></div></div>
+          <div id="feed" class="feed-list"></div>
+        </section>
+        <aside class="right-column">
+          <section class="side-card profile-mini"><div class="side-card-title"><span>YOUR PROFILE</span><button class="text-link" id="edit-profile">Edit ↗</button></div><div id="mini-profile" class="mini-profile-content"></div></section>
+          <section class="side-card people-card"><div class="side-card-title"><span>PEOPLE TO KNOW</span><button class="text-link" data-view="discover">See all ↗</button></div><div id="suggestions" class="suggestions"></div></section>
+          <div class="quote-card"><span class="quote-mark">“</span><p>Small moments become big memories when we share them.</p><span class="quote-byline">A LITTLE REMINDER <i>✳</i></span></div>
+          <div class="footer-links"><a href="#about">About</a><a href="#guidelines">Guidelines</a><span>© 2026 socially</span></div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <div id="auth-modal" class="modal hidden"><div class="modal-backdrop" data-close></div><section class="modal-card"><button class="modal-close" data-close aria-label="Close">×</button><div class="modal-mark">s.</div><span class="eyebrow">YOUR CORNER OF THE INTERNET</span><h2 id="modal-title">Come on in.</h2><p id="modal-subtitle" class="modal-subtitle">A few details and you’re home.</p><form id="auth-form"><div id="name-field" class="field hidden"><label for="auth-name">Your name</label><input id="auth-name" autocomplete="name" placeholder="How should we call you?"></div><div id="username-field" class="field hidden"><label for="auth-username">Username</label><input id="auth-username" autocomplete="username" placeholder="yourname"></div><div class="field"><label for="auth-email">Email address</label><input id="auth-email" type="email" autocomplete="email" required placeholder="you@example.com"></div><div class="field"><label for="auth-password">Password</label><input id="auth-password" type="password" autocomplete="current-password" required minlength="8" placeholder="At least 8 characters"></div><p id="auth-error" class="form-error"></p><button id="auth-submit" class="button button-dark full-width">Let’s go <span>↗</span></button></form><div id="auth-switch" class="auth-switch"></div></section></div>
+  <div id="profile-modal" class="modal hidden"><div class="modal-backdrop" data-close></div><section class="modal-card"><button class="modal-close" data-close aria-label="Close">×</button><div class="modal-mark">✳</div><span class="eyebrow">MAKE YOURSELF AT HOME</span><h2>Edit your profile.</h2><p class="modal-subtitle">A little about the person behind the posts.</p><form id="profile-form"><div class="field"><label for="profile-name">Name</label><input id="profile-name" maxlength="50"></div><div class="field"><label for="profile-bio">Bio</label><textarea id="profile-bio" maxlength="180" placeholder="A few words about you"></textarea></div><div class="field"><label for="profile-avatar">Avatar image URL</label><input id="profile-avatar" type="url" placeholder="https://…"></div><button class="button button-dark full-width">Save profile <span>↗</span></button></form></section></div>
+  <script src="/app.js"></script>
+</body>
+</html>
